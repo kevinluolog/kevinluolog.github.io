@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>github | ⍟曾经走过👣</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">github</h1><a id="logo" href="/.">⍟曾经走过👣</a><p class="description">kevinluo</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/search/"><i class="fa fa-search"> 搜索</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">github</h1><div class="post-meta">Oct 24, 2019<span> | </span><span class="category"><a href="/categories/001-网站/">001.网站</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 3.3k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-hourglass-half"></i><span class="post-count"> 16</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#github"><span class="toc-number">1.</span> <span class="toc-text">github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">1.1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">1.2.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#metastore-额外加上文件meta信息"><span class="toc-number">1.2.1.</span> <span class="toc-text">metastore 额外加上文件meta信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-tools-git-restore-mtime-恢复文件时间等功能use-commit-times"><span class="toc-number">1.2.2.</span> <span class="toc-text">git-tools: git-restore-mtime 恢复文件时间等功能use-commit-times</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接1whats-the-equivalent-of-use-commit-times-for-git"><span class="toc-number">1.2.3.</span> <span class="toc-text">参考链接1:What&#39;s the equivalent of use-commit-times for git?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kareltucekgit-mtime-extension"><span class="toc-number">1.2.4.</span> <span class="toc-text">kareltucek/git-mtime-extension</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell-solution-optimized-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">shell solution optimized 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell-solution-optimized-1-1"><span class="toc-number">1.2.6.</span> <span class="toc-text">shell solution optimized 1</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经验点滴"><span class="toc-number">1.3.</span> <span class="toc-text">经验点滴</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#命令"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-clone"><span class="toc-number">1.3.1.</span> <span class="toc-text">git clone</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#进入到clone-创建的repo目录"><span class="toc-number">2.</span> <span class="toc-text">进入到clone 创建的repo目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-add"><span class="toc-number">2.0.1.</span> <span class="toc-text">git add</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-commit"><span class="toc-number">2.0.2.</span> <span class="toc-text">git commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-push"><span class="toc-number">2.0.3.</span> <span class="toc-text">git push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-remote"><span class="toc-number">2.0.4.</span> <span class="toc-text">git remote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-ls-files--z---eol-获取目录下文件名"><span class="toc-number">2.0.5.</span> <span class="toc-text">git ls-files -z --eol 获取目录下文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-log--1---dateiso---formatad----filename-文件提交时间"><span class="toc-number">2.0.6.</span> <span class="toc-text">git log -1 --date=iso --format=&quot;%ad&quot; -- &quot;$filename&quot; 文件提交时间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#touch-回创建时间"><span class="toc-number">3.</span> <span class="toc-text">touch 回创建时间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下面去掉bash-c-就能工作了。-xargs可以直接传参数给touch使用的。"><span class="toc-number">4.</span> <span class="toc-text">下面去掉bash -c 就能工作了。 xargs可以直接传参数给touch使用的。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#整个过程就是用git-ls-files取到文件名，再用sed取出真正的文件名，再用git-log取到全部的commit历史时间，tail-1取到创建commit时间，利用xargs把时间作为参数送到touch-data-quot-quot-更新时间。"><span class="toc-number">5.</span> <span class="toc-text">整个过程就是用git ls-files取到文件名，再用sed取出真正的文件名，再用git   log取到全部的commit历史时间，tail   -1取到创建commit时间，利用xargs把时间作为参数送到touch -data=&quot;&quot;更新时间。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#这个文件修改时间更新好后，还需要hexo的一个脚本，在渲染前把创建时间设置为修改时-间。因为hexo的archive排序用的是创建时间。要不然创建时永远是clone时间。"><span class="toc-number">6.</span> <span class="toc-text">这个文件修改时间更新好后，还需要hexo的一个脚本，在渲染前把创建时间设置为修改时  间。因为hexo的archive排序用的是创建时间。要不然创建时永远是clone时间。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#klBlog-themes-next-scripts-filters-kl-touch-file-time-js"><span class="toc-number">7.</span> <span class="toc-text">klBlog\themes\next\scripts\filters\kl-touch-file-time.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-ls-files-z-–eol-sed-e-quot-s-i-lf-t-w-lf-t-attr-t-n-g-quot-while-read-filename-do-git-log-–date-iso-–format-quot-ad-quot-–-quot-TRAVIS-BUILD-DIR-source-posts-filename-quot-tail-1-xargs-I-bash-c-39-touch-c-filename-–date-quot-quot-39-done"><span class="toc-number">8.</span> <span class="toc-text">?? - git ls-files -z –eol | sed -e &quot;s/i/lf[ \t]w/lf[ \t]attr/[ \t]  */\n/g&quot; | while read filename; do git log –date=iso –format=&quot;%ad&quot; –   &quot;$TRAVIS_BUILD_DIR/source/_posts/$filename&quot; | tail -1 | xargs -I{} bash   -c &#39;touch -c $filename –date=&quot;{}&quot;&#39;; done</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#walk-back-to-the-project-parent-or-the-relative-pathnames-don-39-t-make"><span class="toc-number">9.</span> <span class="toc-text">walk back to the project parent or the relative pathnames don&#39;t make</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sense"><span class="toc-number">10.</span> <span class="toc-text">sense</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Note-that-the-date-format-is-ISO-so-that-touch-will-work"><span class="toc-number">11.</span> <span class="toc-text">Note that the date format is ISO so that touch will work</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#跟踪远程分支"><span class="toc-number">11.0.0.1.</span> <span class="toc-text">跟踪远程分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实际命令摘录tortoisegit"><span class="toc-number">11.0.0.2.</span> <span class="toc-text">实际命令摘录，tortoiseGit</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git.exe-pull---progress--v---no-rebase-origin-hexo-next-pisces"><span class="toc-number">11.0.1.</span> <span class="toc-text">git.exe pull --progress -v --no-rebase &quot;origin&quot; hexo-next-Pisces</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#离散点滴"><span class="toc-number">11.0.1.1.</span> <span class="toc-text">离散点滴</span></a></li></ol></li></div></div><div class="post-content"><h1 id="github">github</h1>
+<div class="contents">
+<p>contents</p>
+</div>
+<div class="section-numbering">
+
+</div>
+<h2 id="参考链接">参考链接</h2>
+<p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">git-scm 官方doc 网址</a></p>
+<p><a href="https://www.cnblogs.com/qianqiannian/p/6008140.html" target="_blank" rel="noopener">Git push常见用法</a></p>
+<p><a href="https://blog.csdn.net/caseywei/article/details/90945295" target="_blank" rel="noopener">git add -A 和 git add . 的区别</a></p>
+<p><a href="https://www.cnblogs.com/wuer888/p/7655856.html" target="_blank" rel="noopener">git命令之git remote的用法</a></p>
+<p><a href="http://f.dataguru.cn/java-925217-1-1.html" target="_blank" rel="noopener">git跟踪远程分支，查看本地分支追踪和远程分支的关系</a></p>
+<p><a href="https://www.jianshu.com/p/4ceb39ee4b2b" target="_blank" rel="noopener">git跟踪远程分支，查看本地分支追踪和远程分支的关系简书</a></p>
+<p><a href="https://blog.csdn.net/deaidai/article/details/79639885" target="_blank" rel="noopener">Git本地分支与远程分支的追踪关系</a></p>
+<p><a href></a></p>
+<p><a href></a></p>
+<h2 id="工具">工具</h2>
+<p>git恢复保存REPO文件时间信息的工具----------------------------------------------------------------------</p>
+<p><span class="title-ref">stackoverflow.com/ What's the equivalent of use-commit-times for git? &lt;https://stackoverflow.com/questions/1964470/whats-the-equivalent-of-use-commit-times-for-git/13284229#13284229 &gt;</span>__</p>
+<h3 id="metastore-额外加上文件meta信息">metastore 额外加上文件meta信息</h3>
+<p><a href="https://repo.or.cz/w/metastore.git" target="_blank" rel="noopener">Making git usable for backing up file attributes too</a></p>
+<p>metastore is a tool to store the metadata of files/directories/links in a file tree to a separate file and to later compare and apply the stored metadata to said file tree.</p>
+<h3 id="git-tools-git-restore-mtime-恢复文件时间等功能use-commit-times">git-tools: git-restore-mtime 恢复文件时间等功能use-commit-times</h3>
+<p><a href="https://github.com/MestreLion/git-tools#install" target="_blank" rel="noopener">MestreLion/git-tools</a></p>
+<p>git-restore-mtime Restore original modification time of files based on the date of the most recent commit that modified them</p>
+<p>Probably the most popular and useful tool, and the reason this repository was packaged into Debian.</p>
+<p>Git, unlike other version control systems, does not preserve the original timestamp of committed files. Whenever repositories are cloned, or branches/files are checked out, file timestamps are reset to the current date. While this behavior has its justifications (notably when using make to compile software), sometimes it is desirable to restore the original modification date of a file (for example, when generating release tarballs). As git does not provide any way to do that, git-restore-mtime tries to workaround this limitation.</p>
+<p>For more information and background, see <a href="http://stackoverflow.com/a/13284229/624066" target="_blank" rel="noopener">stackoverflow.com/ whats-the-equivalent-of-use-commit-times</a></p>
+<p>For TravisCI users, simply add a config to .travis.yml so it clones the full repository history:</p>
+<dl>
+<dt>git:</dt>
+<dd><p>depth: false</p>
+</dd>
+</dl>
+<h3 id="参考链接1whats-the-equivalent-of-use-commit-times-for-git">参考链接1:What's the equivalent of use-commit-times for git?</h3>
+<p><span class="title-ref">stackoverflow.com/ What's the equivalent of use-commit-times for git? &lt;https://stackoverflow.com/questions/1964470/whats-the-equivalent-of-use-commit-times-for-git/13284229#13284229 &gt;</span>__</p>
+<p>IMHO, not storing timestamps (and other metadata like permissions and ownership) is a big limitation of git.</p>
+<p>Linus' rationale of timestamps being harmful just because it "confuses make" is lame:</p>
+<p>make clean is enough to fix any problems.</p>
+<p>Applies only to projects that use make, mostly C/C++. It is completely moot for scripts like Python, Perl, or documentation in general.</p>
+<p>There is only harm if you apply the timestamps. There would be no harm in storing them in repo. Applying them could be a simple --with-timestamps option for git checkout and friends (clone, pull etc), at the user's discretion.</p>
+<p>Your arguments are valid. I'd hope somebody with some clout would make an enhancement request for git to have your suggested --with-timestamps option. – weberjn Nov 2 '17 at 12:40</p>
+<p>git克隆更改文件修改时间 <a href="http://www.voidcn.com/article/p-pbfzuvro-bty.html" target="_blank" rel="noopener">voidcn.com/article/p-pbfzuvro-bty.html</a></p>
+<p><a href="https://stackoverflow.com/questions/21735435/git-clone-changes-file-modification-time" target="_blank" rel="noopener">stackoverflow.com/questions/21735435/git-clone-changes-file-modification-time</a></p>
+<h3 id="kareltucekgit-mtime-extension">kareltucek/git-mtime-extension</h3>
+<p><a href="https://github.com/kareltucek/git-mtime-extension" target="_blank" rel="noopener">github.com/kareltucek/git-mtime-extension</a></p>
+<h3 id="shell-solution-optimized-1">shell solution optimized 1</h3>
+<p>Here is an optimized version of the above shell solutions, with minor fixes:</p>
+<pre><code>#!/bin/sh
+
+<p>if [ &quot;$(uname)&quot; = &#39;Darwin&#39; ] ||<br>   [ &quot;$(uname)&quot; = &#39;FreeBSD&#39; ]; then<br>   gittouch() {<br>      touch -ch -t &quot;$(date -r &quot;$(git log -1 –format=%ct &quot;$1&quot;)&quot;   &#39;+%Y%m%d%H%M.%S&#39;)&quot; &quot;$1&quot;<br>   }<br>else<br>   gittouch() {<br>      touch -ch -d &quot;$(git log -1 –format=%ci &quot;$1&quot;)&quot; &quot;$1&quot;<br>   }<br>fi</p>
+<p>git ls-files |<br>   while IFS= read -r file; do<br>      gittouch &quot;$file&quot;<br>   done</p></code></pre><p></p>
+<h3 id="shell-solution-optimized-1-1">shell solution optimized 1</h3>
+<p>The following script incorporates the -n 1 and HEAD suggestions, works in most non-Linux environments (like Cygwin), and can be run on a checkout after the fact:</p>
+<pre><code>#!/bin/bash -e
+
+<p>OS=${OS:-<code>uname</code>}</p>
+<p>get_file_rev() {<br>    git rev-list -n 1 HEAD &quot;$1&quot;<br>}    </p>
+<p>if [ &quot;$OS&quot; = &#39;FreeBSD&#39; ]<br>then<br>    update_file_timestamp() {<br>        file_time=<code>date -r &amp;quot;$(git show --pretty=format:%at   --abbrev-commit &amp;quot;$(get_file_rev &amp;quot;$1&amp;quot;)&amp;quot; | head -n 1)&amp;quot;   &amp;#39;+%Y%m%d%H%M.%S&amp;#39;</code><br>        touch -h -t &quot;$file_time&quot; &quot;$1&quot;<br>    }<br>else<br>    update_file_timestamp() {<br>        file_time=<code>git show --pretty=format:%ai --abbrev-commit   &amp;quot;$(get_file_rev &amp;quot;$1&amp;quot;)&amp;quot; | head -n 1</code><br>        touch -d &quot;$file_time&quot; &quot;$1&quot;<br>    }<br>fi    </p>
+<p>OLD_IFS=$IFS<br>IFS=$&#39;\n&#39;</p>
+<p>for file in <code>git ls-files</code><br>do<br>    update_file_timestamp &quot;$file&quot;<br>done</p>
+<p>IFS=$OLD_IFS</p>
+<p>git update-index –refresh</p></code></pre><p></p>
+<h2 id="经验点滴">经验点滴</h2>
+<h4 id="命令">命令</h4>
+<h3 id="git-clone">git clone</h3>
+<pre><code># 注意：如果直接显式指明clone目标目录，则一定要把repo名字写上，不然不会自动加上;   如果省略,则会自动创建repo名的目录，然后clone进这个目录
+# &lt;directory&gt;The name of a new directory to clone into. The &quot;humanish&quot;    part of the source repository is used if no directory is explicitly given    (repo for /path/to/repo.git and foo for host.xz:foo/.git). Cloning into    an existing directory is only allowed if the directory is empty  #- git    clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/   gp-memo.git /tmp/klgit/gp-memo
+
+<ul>
+<li>git clone -b gh-pages https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git<h1 id="进入到clone-创建的repo目录"><a href="#进入到clone-创建的repo目录" class="headerlink" title="进入到clone 创建的repo目录"></a>进入到clone 创建的repo目录</h1></li>
+<li>cd gp-memo</li></ul></code></pre><h3 id="git-add">git add</h3>
+<ul>
+<li>git add -A 提交所有变化</li>
+<li>git add -u 提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</li>
+<li>git add . 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</li>
+</ul>
+<pre><code>git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(   modified)以及新文件(new)，但不包括被删除的文件。
+git add -u ：他仅监控已经被add的文件（即tracked    file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked    file）。（git add --update的缩写）
+git add -A ：是上面两个功能的合集（git add --all的缩写）</code></pre>
+<h3 id="git-commit">git commit</h3>
+<pre><code># git commit -m ‘message’
+# -m 参数表示可以直接输入后面的“message”，如果不加 -m参数，那么是不能直接输入mess   age的，而是会调用一个编辑器一般是vim来让你输入这个message，
+# message即是我们用来简要说明这次提交的语句。
+# git commit -am ‘message’ -am等同于-a -m
+# -a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们   没有经过git add添加到暂存区，
+# 注意: 新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。
+# --allow-empty
+# Usually recording a commit that has the exact same tree as its sole    parent commit is a mistake, and the command prevents you from making such    a commit. This option bypasses the safety, and is primarily for use by    foreign SCM interface scripts.
+<li>git commit –allow-empty -m &quot;kl+travis+&quot;</li></code></pre><h3 id="git-push">git push</h3>
+<pre><code># git push的一般形式为 git push &lt;远程主机名&gt; &lt;本地分支名&gt; &lt;远程分支名&gt; ，例如    git push origin master：refs/for/master    ，即是将本地的master分支推送到远程主机origin上的对应master分支， origin    是远程主机名。第一个master是本地分支名，第二个master是远程分支名。
+# git push origin master
+# 如果 远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
+# git push origin ：refs/for/master
+# 如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到 远程分支，等同于 git push origin –delete master
+# git push origin
+# 如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支
+# git push
+# 如果当前分支只有一个远程分支，那么主机名都可以省略，形如 git push，可以使用git branch -r ，查看远程的分支名
+#  关于 refs/for：
+# refs/for 的意义在于我们提交代码到服务器之后是需要经过code review    之后才能进行merge的，而refs/heads 不需要
+# 原文链接：https://blog.csdn.net/qq_37577660/article/details/78565899
+<li>git push https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git</li></code></pre><h3 id="git-remote">git remote</h3>
+<pre><code>git remote -v
+git init
+git add xxx
+git commit -m &#39;xxx&#39;
+git remote add origin ssh://software@172.16.0.30/~/yafeng/.git
+git push origin master 
+git remote show origin
+git clone https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git</code></pre>
+<h3 id="git-ls-files--z---eol-获取目录下文件名">git ls-files -z --eol 获取目录下文件名</h3>
+<p>显示所有文件</p>
+<p><a href="https://www.git-scm.com/docs/git-ls-files" target="_blank" rel="noopener">www.git-scm.com/docs/git-ls-files</a></p>
+<pre><code>$ git ls-files -z --eol
+i/lf    w/lf    attr/                   000misc/extract.mdi/lf    w/lf    attr/                   000misc/memo-debug.mdi/lf  
+
+
+
+<p>-z: 缺省把汉字等字符以\转义码输出，加z表示以正常显示字符输出,但是加z时没有分行<br>–eol： will show i/&lt;eolinfo&gt;&lt;SPACES&gt;w/&lt;eolinfo&gt;&lt;SPACES&gt;attr/&lt;eolattr&gt;&lt;SPACE*&gt;&lt;TAB&gt;&lt;file&gt;， windows下自动转换会变成 w/crlf回车换行</p></code></pre><p></p>
+<h3 id="git-log--1---dateiso---formatad----filename-文件提交时间">git log -1 --date=iso --format="%ad" -- "$filename" 文件提交时间</h3>
+<p><a href="https://www.git-scm.com/docs/git-log" target="_blank" rel="noopener">www.git-scm.com/docs/git-log</a></p>
+<p>查看文件最后一行： tail -1 文件名，后面必须是文件， 或者 | tail -1 管道输出的内容</p>
+<pre><code>显示各纯文件名：
+git ls-files -z --eol | sed -e &quot;s/i\/lf[ \t]*w\/lf[ \t]*attr\/[ \t]*/\n/  g&quot;
+
+<p>显示各文件首次COMMIT时间,注意linux下是lf,not crlr：<br>git ls-files -z –eol | sed -e &quot;s/i/lf[ \t]<em>w/lf[ \t]*attr/[ \t]</em>/\n/  g&quot; | while read filename; do git log –date=iso –format=&quot;%ad&quot; –   &quot;$TRAVIS_BUILD_DIR/source/_posts/$filename&quot; | tail -1; done<br>输出格式：可以直接被 touch 参数 –date &quot;&quot;识别<br>2019-09-26 15:09:54 +0800</p>
+<h1 id="touch-回创建时间"><a href="#touch-回创建时间" class="headerlink" title="touch 回创建时间"></a>touch 回创建时间</h1><h1 id="下面去掉bash-c-就能工作了。-xargs可以直接传参数给touch使用的。"><a href="#下面去掉bash-c-就能工作了。-xargs可以直接传参数给touch使用的。" class="headerlink" title="下面去掉bash -c 就能工作了。 xargs可以直接传参数给touch使用的。"></a>下面去掉bash -c 就能工作了。 xargs可以直接传参数给touch使用的。</h1><h1 id="整个过程就是用git-ls-files取到文件名，再用sed取出真正的文件名，再用git-log取到全部的commit历史时间，tail-1取到创建commit时间，利用xargs把时间作为参数送到touch-data-quot-quot-更新时间。"><a href="#整个过程就是用git-ls-files取到文件名，再用sed取出真正的文件名，再用git-log取到全部的commit历史时间，tail-1取到创建commit时间，利用xargs把时间作为参数送到touch-data-quot-quot-更新时间。" class="headerlink" title="整个过程就是用git ls-files取到文件名，再用sed取出真正的文件名，再用git   log取到全部的commit历史时间，tail   -1取到创建commit时间，利用xargs把时间作为参数送到touch -data=&quot;&quot;更新时间。"></a>整个过程就是用git ls-files取到文件名，再用sed取出真正的文件名，再用git   log取到全部的commit历史时间，tail   -1取到创建commit时间，利用xargs把时间作为参数送到touch -data=&quot;&quot;更新时间。</h1><h1 id="这个文件修改时间更新好后，还需要hexo的一个脚本，在渲染前把创建时间设置为修改时-间。因为hexo的archive排序用的是创建时间。要不然创建时永远是clone时间。"><a href="#这个文件修改时间更新好后，还需要hexo的一个脚本，在渲染前把创建时间设置为修改时-间。因为hexo的archive排序用的是创建时间。要不然创建时永远是clone时间。" class="headerlink" title="这个文件修改时间更新好后，还需要hexo的一个脚本，在渲染前把创建时间设置为修改时  间。因为hexo的archive排序用的是创建时间。要不然创建时永远是clone时间。"></a>这个文件修改时间更新好后，还需要hexo的一个脚本，在渲染前把创建时间设置为修改时  间。因为hexo的archive排序用的是创建时间。要不然创建时永远是clone时间。</h1><h1 id="klBlog-themes-next-scripts-filters-kl-touch-file-time-js"><a href="#klBlog-themes-next-scripts-filters-kl-touch-file-time-js" class="headerlink" title="klBlog\themes\next\scripts\filters\kl-touch-file-time.js"></a>klBlog\themes\next\scripts\filters\kl-touch-file-time.js</h1><h1 id="git-ls-files-z-–eol-sed-e-quot-s-i-lf-t-w-lf-t-attr-t-n-g-quot-while-read-filename-do-git-log-–date-iso-–format-quot-ad-quot-–-quot-TRAVIS-BUILD-DIR-source-posts-filename-quot-tail-1-xargs-I-bash-c-39-touch-c-filename-–date-quot-quot-39-done"><a href="#git-ls-files-z-–eol-sed-e-quot-s-i-lf-t-w-lf-t-attr-t-n-g-quot-while-read-filename-do-git-log-–date-iso-–format-quot-ad-quot-–-quot-TRAVIS-BUILD-DIR-source-posts-filename-quot-tail-1-xargs-I-bash-c-39-touch-c-filename-–date-quot-quot-39-done" class="headerlink" title="?? - git ls-files -z –eol | sed -e &quot;s/i/lf[ \t]w/lf[ \t]attr/[ \t]  */\n/g&quot; | while read filename; do git log –date=iso –format=&quot;%ad&quot; –   &quot;$TRAVIS_BUILD_DIR/source/_posts/$filename&quot; | tail -1 | xargs -I{} bash   -c &#39;touch -c $filename –date=&quot;{}&quot;&#39;; done"></a>?? - git ls-files -z –eol | sed -e &quot;s/i/lf[ \t]<em>w/lf[ \t]</em>attr/[ \t]  */\n/g&quot; | while read filename; do git log –date=iso –format=&quot;%ad&quot; –   &quot;$TRAVIS_BUILD_DIR/source/_posts/$filename&quot; | tail -1 | xargs -I{} bash   -c &#39;touch -c $filename –date=&quot;{}&quot;&#39;; done</h1><ul>
+<li>git ls-files -z –eol | sed -e &quot;s/i/lf[ \t]<em>w/lf[ \t]*attr/[ \t]</em>/  \n/g&quot; | while read filename; do git log –date=iso –format=&quot;%ad&quot; –   &quot;$TRAVIS_BUILD_DIR/source/_posts/$filename&quot; | tail -1 | xargs -I{}   touch -c $filename –date=&quot;{}&quot; -m; done</li></ul></code></pre><p>网上参考源码片段</p>
+<pre><code>#？？echo &quot;touch --date=\&quot;$(git log -1 --date=iso --format=&quot;%ad&quot; --   &quot;$filename&quot;)\&quot; -m $filename&quot; 
+
+
+
+<p>#??git ls-files | xargs -I{} bash -c &#39;touch &quot;{}&quot; –date=@$(git log -n1 –pretty=format:%ct – &quot;{}&quot;)&#39;</p>
+<p>#??xargs -I{} bash -c &#39;touch $filename –date=&quot;{}&quot;&#39;</p></code></pre><p></p>
+<p>网上参考源码，sh批处理</p>
+<pre><code># getcheckin - Retrieve the last committed checkin date and time for
+#              each of the files in the git project.  After a &quot;pull&quot;
+#              of the project, you can update the timestamp on the
+#              pulled files to match that date/time.  There are many
+#              that don&#39;t believe that this is not a good idea, but
+#              I found it useful to get the right source file dates
+#
+#              NOTE: This script produces commands suitable for
+#                    piping into BASH or other shell
+# License: Creative Commons Attribution 3.0 United States
+# (CC by 3.0 US)
+
+<p>##########</p>
+<h1 id="walk-back-to-the-project-parent-or-the-relative-pathnames-don-39-t-make"><a href="#walk-back-to-the-project-parent-or-the-relative-pathnames-don-39-t-make" class="headerlink" title="walk back to the project parent or the relative pathnames don&#39;t make"></a>walk back to the project parent or the relative pathnames don&#39;t make</h1><h1 id="sense"><a href="#sense" class="headerlink" title="sense"></a>sense</h1><p>##########<br>while [ ! -d ./.git ]<br>do<br>    cd ..<br>done<br>echo &quot;cd $(pwd)&quot;<br>##########</p>
+<h1 id="Note-that-the-date-format-is-ISO-so-that-touch-will-work"><a href="#Note-that-the-date-format-is-ISO-so-that-touch-will-work" class="headerlink" title="Note that the date format is ISO so that touch will work"></a>Note that the date format is ISO so that touch will work</h1><p>##########<br>git ls-tree -r –full-tree HEAD |<br>    sed -e &quot;s/.*\t//&quot; | while read filename; do<br>    echo &quot;touch –date=&amp;quot;$(git log -1 –date=iso –format=&quot;%ad&quot; –   &quot;$filename&quot;)&amp;quot; -m $filename&quot;<br>done</p></code></pre><p></p>
+<h4 id="跟踪远程分支">跟踪远程分支</h4>
+<pre><code>从当前分支切换到‘dev’分支：
+git checkout dev
+建立并切换新分支：
+git checkout -b &#39;dev&#39;
+查看当前详细分支信息（可看到当前分支与对应的远程追踪分支）:
+git branch -vv
+查看当前远程仓库信息
+git remote -vv</code></pre>
+<p>如果用git push指令时，当前分支没有跟踪远程分支（没有和远程分支建立联系），那么就会git就会报错</p>
+<p>There is no tracking information for the current branch. Please specify which branch you want to merge with. 因为当前分支没有追踪远程指定的分支的话，当前分支指定的版本快照不知道要作为服务器哪一个分支的版本快照的子节点。简单来说就是：不知道要推送给哪一个分支。 那么如何建立远程分支：</p>
+<p>克隆时自动将创建好的master分支追踪origin/master分支</p>
+<pre><code>git clone 服务器地址
+git checkout -b develop origin/develop</code></pre>
+<p>在远程分支的基础上建立develop分支，并且让develop分支追踪origin/develop远程分支。</p>
+<pre><code>git branch --set-upstream branch-name origin/branch-name</code></pre>
+<p>将branch-name分支追踪远程分支origin/branch-name</p>
+<pre><code>git branch -u origin/serverfix</code></pre>
+<p>设置当前分支跟踪远程分支origin/serverfix</p>
+<p>查看本地分支和远程分支的跟踪关系</p>
+<pre><code>git branch -vv</code></pre>
+<p>比如输入</p>
+<pre><code>$ git branch -vv
+  develop   08775f9 [origin/develop] develop
+  feature_1 b41865d [origin/feature_1] feature_1
+* master    1399706 [my_github/master] init commit</code></pre>
+<p>develop分支跟踪origin/develop</p>
+<p>feature_1分支跟踪origin/feature_1</p>
+<p>master跟踪了my_github/master，且当前分支为master分支</p>
+<p>那么假如我此时想要将master的改变推送到origin服务器的master分支上：</p>
+<pre><code>$ git checkout master//切换到master分支
+...
+$ git branch -u origin/master//将当前分支跟踪origin/master</code></pre>
+<p>Branch 'master' set up to track remote branch 'master' from 'origin'. 之后就可以执行git add和git commit了 现在再查看一下本地和远程的分支关系：</p>
+<pre><code>$ git branch -vv
+  develop   08775f9 [origin/develop] develop
+  feature_1 b41865d [origin/feature_1] feature_1
+* master    1399706 [origin/master] init commit</code></pre>
+<p>master已经跟踪了origin/master了</p>
+<h4 id="实际命令摘录tortoisegit">实际命令摘录，tortoiseGit</h4>
+<h3 id="git.exe-pull---progress--v---no-rebase-origin-hexo-next-pisces">git.exe pull --progress -v --no-rebase "origin" hexo-next-Pisces</h3>
+<pre><code>git.exe pull --progress -v --no-rebase &quot;origin&quot; hexo-next-Pisces
+
+<p>From github.com:kevinluolog/hexo-klblog-src</p>
+<ul>
+<li>branch            hexo-next-Pisces -&gt; FETCH_HEAD<br>= [up to date]      hexo-next-Pisces -&gt; origin/hexo-next-Pisces<br>Already up to date.</li>
+</ul>
+<p>Success (7800 ms @ 2019/10/27 星期日 8:50:58)</p></code></pre><p></p>
+<h4 id="离散点滴">离散点滴</h4>
+<ul>
+<li>git clone -b gh-pages <a href="https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git" target="_blank" rel="noopener">https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git</a>： 不写目标目录时，会把repo名gp-memo作为目录名</li>
+<li>git clone -b gh-pages <a href="https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git" target="_blank" rel="noopener">https://$GH_TOKEN_FULL@github.com/kevinluolog/gp-memo.git</a> /tmp/gp-memo： 写目标目录时，不会自动把repo名gp-memo作为目录名，需要显式地写上，要不会把repo内容直接写入目标目录。</li>
+<li>git commit --allow-empty -m "kl+travis+" : --allow-empty 让commit相同时不返回错exit(1),如travis CI 不会报错</li>
+</ul>
+</div><div class="tags"><a href="/tags/自动生成/">自动生成</a><a href="/tags/001-网站/">001.网站</a></div><div class="post-nav"><a class="pre" href="/2019/10/24/kl_notes/002memo/index/">index</a><a class="next" href="/2019/10/24/kl_notes/002memo/001software/001install/linux/">linux</a></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/00-00misc/">00-00misc</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-00国学/">00-00国学</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-01古文/">00-01古文</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-02古训/">00-02古训</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-03小说/">00-03小说</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-04学术/">00-04学术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-05佛经/">00-05佛经</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-05南师/">00-05南师</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-06曾国藩/">00-06曾国藩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-07金圣叹/">00-07金圣叹</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-08钱穆/">00-08钱穆</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-09历史/">00-09历史</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-10英文/">00-10英文</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/000misc/">000misc</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001-make/">001.make</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001-编程/">001.编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001-网站/">001.网站</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001install/">001install</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001software/">001software</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/002memo/">002memo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/002plan/">002plan</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/002usage/">002usage</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/003post/">003post</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/004book/">004book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p00其它/">p00其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p01散文/">p01散文</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p02读书/">p02读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p03旅游/">p03旅游</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p04财经/">p04财经</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p05技术/">p05技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p06历史/">p06历史</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p07创投/">p07创投</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p08写作/">p08写作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p09work/">p09work</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/welcome/">welcome</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/welcome/hello/">hello</a><span class="category-list-count">1</span></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/001software/" style="font-size: 15px;">001software</a> <a href="/tags/hello/" style="font-size: 15px;">hello</a> <a href="/tags/book/" style="font-size: 15px;">book+</a> <a href="/tags/002memo/" style="font-size: 15px;">002memo</a> <a href="/tags/post/" style="font-size: 15px;">post+</a> <a href="/tags/000misc/" style="font-size: 15px;">000misc</a> <a href="/tags/自动生成/" style="font-size: 15px;">自动生成</a> <a href="/tags/002plan/" style="font-size: 15px;">002plan</a> <a href="/tags/001install/" style="font-size: 15px;">001install</a> <a href="/tags/002usage/" style="font-size: 15px;">002usage</a> <a href="/tags/001-编程/" style="font-size: 15px;">001.编程</a> <a href="/tags/001-网站/" style="font-size: 15px;">001.网站</a> <a href="/tags/001-make/" style="font-size: 15px;">001.make</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-09历史/司马光-资治通鉴-23-01-周-原本/">司马光-资治通鉴-23-01-周-原本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-09历史/司马光-资治通鉴-23-20-后唐-原本/">司马光-资治通鉴-23-20-后唐-原本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-09历史/司马光-资治通鉴-23-08-晋2-原本/">司马光-资治通鉴-23-08-晋2-原本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-01古文/古文观止-白话注释译文-4-1/">古文观止-白话注释译文-4-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-00misc/叶开-这才是中国最好的语文书-散文分册/">叶开-这才是中国最好的语文书-散文分册</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-03小说/明朝那些事儿-7-1/">明朝那些事儿-7-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-07金圣叹/金圣叹-批评水浒传-4-1/">金圣叹-批评水浒传-4-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-03小说/明朝那些事儿-7-5/">明朝那些事儿-7-5</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-00misc/孙绍振-解读经典散文-3-2/">孙绍振-解读经典散文-3-2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-03小说/王实甫-西厢记-2-1-小说版/">王实甫-西厢记-2-1-小说版</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">⍟曾经走过👣.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

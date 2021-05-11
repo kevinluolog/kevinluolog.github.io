@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>makefile | ⍟曾经走过👣</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">makefile</h1><a id="logo" href="/.">⍟曾经走过👣</a><p class="description">kevinluo</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/search/"><i class="fa fa-search"> 搜索</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">makefile</h1><div class="post-meta">Sep 26, 2019<span> | </span><span class="category"><a href="/categories/001-make/">001.make</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 1.5k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-hourglass-half"></i><span class="post-count"> 7</span><span class="post-meta-item-text"> 分钟</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#makefiles"><span class="toc-number">1.</span> <span class="toc-text">makefiles</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-number">1.1.</span> <span class="toc-text">案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用makefile自动遍历子目录源文件自动生成依赖"><span class="toc-number">1.1.1.</span> <span class="toc-text">通用makefile,自动遍历子目录源文件，自动生成依赖。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#makefile操作系统检测方法"><span class="toc-number">1.1.2.</span> <span class="toc-text">makefile操作系统检测方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#target-…"><span class="toc-number">2.</span> <span class="toc-text">target = …..</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#target-…-1"><span class="toc-number">3.</span> <span class="toc-text">target = …..</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#c-hello-c-gt-hello-c-is-first-file-after-39-39-gt-Compile-hello-c"><span class="toc-number">4.</span> <span class="toc-text">-c hello.c  =&gt; hello.c is first file after &#39;:&#39; =&gt; Compile hello.c</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fPIC-gt-Position-Independent-Code-required-for-shared-lib"><span class="toc-number">5.</span> <span class="toc-text">-fPIC       =&gt; Position-Independent Code (required for shared lib)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#o-hello-o-gt-hello-o-is-the-target-gt-Output-file-o-is-hello-o"><span class="toc-number">6.</span> <span class="toc-text">-o hello.o  =&gt; hello.o is the target =&gt; Output file (-o) is hello.o</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hello-o-gt-hello-o-is-the-first-after-39-39-gt-Link-hello-o"><span class="toc-number">7.</span> <span class="toc-text">hello.o        =&gt; hello.o is the first after &#39;:&#39; =&gt; Link hello.o</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shared-gt-Generate-shared-library"><span class="toc-number">8.</span> <span class="toc-text">-shared        =&gt; Generate shared library</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#o-libhello-so-gt-Output-file-o-is-libhello-so-libhello-so-or-hello-dll"><span class="toc-number">9.</span> <span class="toc-text">-o libhello.so =&gt; Output file (-o) is libhello.so (libhello.so or hello.dll)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#next"><span class="toc-number">9.0.1.</span> <span class="toc-text">next</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#next-1"><span class="toc-number">9.0.2.</span> <span class="toc-text">next</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法技巧"><span class="toc-number">9.1.</span> <span class="toc-text">用法技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#multiple-targets-in-a-rule-多目标写在一行"><span class="toc-number">9.1.1.</span> <span class="toc-text">Multiple Targets in a Rule 多目标写在一行</span></a></li></ol></li></ol></div></div><div class="post-content"><h1 id="makefiles">makefiles</h1>
+<div class="contents">
+<p>目录</p>
+</div>
+<div class="section-numbering">
+
+</div>
+<p><a href="https://blog.csdn.net/u013896064/article/details/83040906" target="_blank" rel="noopener">make之makefile 九 隐含规则</a></p>
+<h2 id="案例">案例</h2>
+<h3 id="通用makefile自动遍历子目录源文件自动生成依赖">通用makefile,自动遍历子目录源文件，自动生成依赖。</h3>
+<p><a href="https://blog.csdn.net/yuliying/article/details/49635485" target="_blank" rel="noopener">一份通用makefile,自动遍历子目录源文件，自动生成依赖Ubuntu和OSX</a></p>
+<p>这份makefile可以将当前makefile所在文件夹以及所有子文件夹中的cpp文件打包成静态库/动态库/可执行文件. 自动生成所有依赖关系，修改任何文件都可以触发重新编译相应依赖的文件。</p>
+<p>在Ubuntu 和 OSX 系统测试通过。</p>
+<pre><code>SHELL = /bin/bash
+
+<p>AllDirs := $(shell ls -R | grep &#39;^./.<em>:$$&#39; | awk &#39;{gsub(&quot;:&quot;,&quot;&quot;);print}&#39;) .<br>Sources := $(foreach n,$(AllDirs) , $(wildcard $(n)/</em>.cpp))<br>Objs := $(patsubst %.cpp,%.o, $(Sources))<br>Deps := $(patsubst %.cpp,%.d, $(Sources))<br>StaticLib := libyy.a<br>DynamicLib := libyy.so<br>Bin := yy</p>
+<p>#AllLibs : $(DynamicLib)<br>#AllLibs : $(StaticLib)<br>AllLibs : $(Bin)</p>
+<p>CC = g++<br>CXXFLAGS = -g -O2 -fPIC -Wall<br>CPPFLAGS = $(foreach n,$(AllDirs) , -I$(n))<br>LDFLAGS = -lstdc++</p>
+<p>$(StaticLib) : $(Objs)<br>    ar rcs $@ $^</p>
+<p>$(DynamicLib) : $(Objs)<br>    g++ -shared -o $@ $^ $(LDFLAGS)</p>
+<p>$(Bin) : $(Objs)<br>    g++ $(Objs) -o $@</p>
+<p>%.d : %.cpp<br>    $(CC) -MT&quot;$(&lt;:.cpp=.o) $@&quot; -MM $(CXXFLAGS) $(CPPFLAGS) $&lt; &gt; $@</p>
+<p>sinclude $(Deps)</p>
+<p>.PHONY : clean<br>clean:<br>    rm -f $(Objs) $(Deps) $(StaticLib) $(DynamicLib) $(Bin)</p></code></pre><p></p>
+<h3 id="makefile操作系统检测方法">makefile操作系统检测方法</h3>
+<p>使用两个简单的技巧检测操作系统：</p>
+<ol type="1">
+<li>首先是环境变量 OS</li>
+<li>然后uname命令</li>
+</ol>
+<pre><code>ifeq ($(OS),Windows_NT)     # is Windows_NT on XP, 2000, 7, Vista, 10...
+    detected_OS := Windows
+else
+    detected_OS := $(shell uname)  # same as &quot;uname -s&quot;
+endif</code></pre>
+<p>或者更安全的方式，如果不是在Windows上并且uname不可用：</p>
+<pre><code>ifeq ($(OS),Windows_NT) 
+    detected_OS := Windows
+else
+    detected_OS := $(shell sh -c &#39;uname 2&gt;/dev/null || echo Unknown&#39;)
+endif</code></pre>
+<p>如果你想区分Cygwin / MinGW / MSYS / Windows，肯杰克逊提出了一个有趣的选择。看到他的答案看起来像这样：</p>
+<pre><code>ifeq &#39;$(findstring ;,$(PATH))&#39; &#39;;&#39;
+    detected_OS := Windows
+else
+    detected_OS := $(shell uname 2&gt;/dev/null || echo Unknown)
+    detected_OS := $(patsubst CYGWIN%,Cygwin,$(detected_OS))
+    detected_OS := $(patsubst MSYS%,MSYS,$(detected_OS))
+    detected_OS := $(patsubst MINGW%,MSYS,$(detected_OS))
+endif</code></pre>
+<p>然后您可以根据以下内容选择相关内容detected_OS：</p>
+<pre><code>ifeq ($(detected_OS),Windows)
+    CFLAGS += -D WIN32
+endif
+ifeq ($(detected_OS),Darwin)        # Mac OS X
+    CFLAGS += -D OSX
+endif
+ifeq ($(detected_OS),Linux)
+    CFLAGS   +=   -D LINUX
+endif
+ifeq ($(detected_OS),GNU)           # Debian GNU Hurd
+    CFLAGS   +=   -D GNU_HURD
+endif
+ifeq ($(detected_OS),GNU/kFreeBSD)  # Debian kFreeBSD
+    CFLAGS   +=   -D GNU_kFreeBSD
+endif
+ifeq ($(detected_OS),FreeBSD)
+    CFLAGS   +=   -D FreeBSD
+endif
+ifeq ($(detected_OS),NetBSD)
+    CFLAGS   +=   -D NetBSD
+endif
+ifeq ($(detected_OS),DragonFly)
+    CFLAGS   +=   -D DragonFly
+endif
+ifeq ($(detected_OS),Haiku)
+    CFLAGS   +=   -D Haiku
+endif</code></pre>
+<p>笔记：</p>
+<p>命令uname与uname -s因为option -s（--kernel-name）是默认值相同。看看为什么uname -s比这更好uname -o。</p>
+<p>使用OS（而不是uname）简化了识别算法。您仍然可以单独使用uname，但您必须处理if/else块以检查所有MinGW，Cygwin等变体。</p>
+<p>环境变量OS始终设置为"Windows_NT"不同的Windows版本（请参阅%OS%Wikipedia上的环境变量）。</p>
+<p>另一种方法OS是环境变量MSVC（它检查MS Visual Studio的存在，请参阅使用Visual C ++的示例）。</p>
+<p>下面我提供一个使用make和gcc构建共享库的完整示例：*.so或者*.dll取决于平台。这个例子尽可能简单易懂。</p>
+<p>要在Windows上安装make，gcc请参阅Cygwin或MinGW。</p>
+<p>我的例子基于五个文件</p>
+<pre><code>├── lib
+│   └── Makefile
+│   └── hello.h
+│   └── hello.c
+└── app
+    └── Makefile
+    └── main.c</code></pre>
+<p>提醒:Makefile使用制表缩进。在示例文件下面复制粘贴时的注意事项。</p>
+<p>这两个Makefile文件</p>
+<ol type="1">
+<li><p>lib/Makefile</p>
+<pre><code>ifeq ($(OS),Windows_NT)
+    uname_S := Windows
+else
+    uname_S := $(shell uname -s)
+endif
+
+<p>ifeq ($(uname_S), Windows)<br>    target = hello.dll<br>endif<br>ifeq ($(uname_S), Linux)<br>    target = libhello.so<br>endif<br>#ifeq ($(uname_S), …..) #See <a href="https://stackoverflow.com/a/27776822/938111" target="_blank" rel="noopener">https://stackoverflow.com/a/27776822/938111</a></p>
+<h1 id="target-…"><a href="#target-…" class="headerlink" title="target = ….."></a>target = …..</h1><p>#endif</p>
+<p>%.o: %.c<br>    gcc  -c $&lt;  -fPIC  -o $@<br>    # -c $&lt;  =&gt; $&lt; is first file after &#39;:&#39; =&gt; Compile hello.c<br>    # -fPIC  =&gt; Position-Independent Code (required for shared lib)<br>    # -o $@  =&gt; $@ is the target =&gt; Output file (-o) is hello.o</p>
+<p>$(target): hello.o<br>    gcc  $^  -shared  -o $@<br>    # $^      =&gt; $^ expand to all prerequisites (after &#39;:&#39;) =&gt; hello.o<br>    # -shared =&gt; Generate shared library<br>    # -o $@   =&gt; Output file (-o) is $@ (libhello.so or hello.dll)</p></code></pre></li><p></p>
+<li><p>app/Makefile</p>
+<pre><code>ifeq ($(OS),Windows_NT)
+    uname_S := Windows
+else
+    uname_S := $(shell uname -s)
+endif
+
+<p>ifeq ($(uname_S), Windows)<br>    target = app.exe<br>endif<br>ifeq ($(uname_S), Linux)<br>    target = app<br>endif<br>#ifeq ($(uname_S), …..) #See <a href="https://stackoverflow.com/a/27776822/938111" target="_blank" rel="noopener">https://stackoverflow.com/a/27776822/938111</a></p>
+<h1 id="target-…-1"><a href="#target-…-1" class="headerlink" title="target = ….."></a>target = …..</h1><p>#endif</p>
+<p>%.o: %.c<br>    gcc  -c $&lt; -I ../lib  -o $@<br>    # -c $&lt;     =&gt; compile (-c) $&lt; (first file after :) = main.c<br>    # -I ../lib =&gt; search headers (*.h) in directory ../lib<br>    # -o $@     =&gt; output file (-o) is $@ (target) = main.o</p>
+<p>$(target): main.o<br>    gcc  $^  -L../lib  -lhello  -o $@<br>    # $^       =&gt; $^ (all files after the :) = main.o (here only one file)<br>    # -L../lib =&gt; look for libraries in directory ../lib<br>    # -lhello  =&gt; use shared library hello (libhello.so or hello.dll)<br>    # -o $@    =&gt; output file (-o) is $@ (target) = &quot;app.exe&quot; or &quot;app&quot;</p></code></pre></li><p></p>
+</ol>
+<p>要了解更多信息，请阅读cfi指出的自动变量文档。</p>
+<p>源代码</p>
+<ul>
+<li><p>lib/hello.h</p>
+<pre><code>#ifndef HELLO_H_
+#define HELLO_H_
+
+<p>const char* hello();</p>
+<p>#endif</p></code></pre></li><p></p>
+<li><p>lib/hello.c</p>
+<pre><code>#include &quot;hello.h&quot;
+
+<p>const char* hello()<br>{<br>    return &quot;hello&quot;;<br>}</p></code></pre></li><p></p>
+<li><p>app/main.c</p>
+<pre><code>#include &quot;hello.h&quot; //hello()
+#include &lt;stdio.h&gt; //puts()
+
+<p>int main()<br>{<br>    const char* str = hello();<br>    puts(str);<br>}</p></code></pre></li><p></p>
+</ul>
+<p>构建</p>
+<p>修复Makefile（通过一个制表替换前导空格）的复制粘贴。</p>
+<pre><code>&gt; sed  &#39;s/^  */\t/&#39;  -i  */Makefile</code></pre>
+<p>make两个平台上的命令都是相同的。给定的输出是在类Unix操作系统上：</p>
+<pre><code>&gt; make -C lib
+
+<p>  make: Entering directory &#39;/tmp/lib&#39;<br>  gcc  -c hello.c  -fPIC  -o hello.o</p>
+<h1 id="c-hello-c-gt-hello-c-is-first-file-after-39-39-gt-Compile-hello-c"><a href="#c-hello-c-gt-hello-c-is-first-file-after-39-39-gt-Compile-hello-c" class="headerlink" title="-c hello.c  =&gt; hello.c is first file after &#39;:&#39; =&gt; Compile hello.c"></a>-c hello.c  =&gt; hello.c is first file after &#39;:&#39; =&gt; Compile hello.c</h1><h1 id="fPIC-gt-Position-Independent-Code-required-for-shared-lib"><a href="#fPIC-gt-Position-Independent-Code-required-for-shared-lib" class="headerlink" title="-fPIC       =&gt; Position-Independent Code (required for shared lib)"></a>-fPIC       =&gt; Position-Independent Code (required for shared lib)</h1><h1 id="o-hello-o-gt-hello-o-is-the-target-gt-Output-file-o-is-hello-o"><a href="#o-hello-o-gt-hello-o-is-the-target-gt-Output-file-o-is-hello-o" class="headerlink" title="-o hello.o  =&gt; hello.o is the target =&gt; Output file (-o) is hello.o"></a>-o hello.o  =&gt; hello.o is the target =&gt; Output file (-o) is hello.o</h1><p>  gcc  hello.o  -shared  -o libhello.so</p>
+<h1 id="hello-o-gt-hello-o-is-the-first-after-39-39-gt-Link-hello-o"><a href="#hello-o-gt-hello-o-is-the-first-after-39-39-gt-Link-hello-o" class="headerlink" title="hello.o        =&gt; hello.o is the first after &#39;:&#39; =&gt; Link hello.o"></a>hello.o        =&gt; hello.o is the first after &#39;:&#39; =&gt; Link hello.o</h1><h1 id="shared-gt-Generate-shared-library"><a href="#shared-gt-Generate-shared-library" class="headerlink" title="-shared        =&gt; Generate shared library"></a>-shared        =&gt; Generate shared library</h1><h1 id="o-libhello-so-gt-Output-file-o-is-libhello-so-libhello-so-or-hello-dll"><a href="#o-libhello-so-gt-Output-file-o-is-libhello-so-libhello-so-or-hello-dll" class="headerlink" title="-o libhello.so =&gt; Output file (-o) is libhello.so (libhello.so or hello.dll)"></a>-o libhello.so =&gt; Output file (-o) is libhello.so (libhello.so or hello.dll)</h1><p>  make: Leaving directory &#39;/tmp/lib&#39;</p></code></pre><p></p>
+<pre><code>&gt; make -C app
+  make: Entering directory &#39;/tmp/app&#39;
+  gcc  -c main.c -I ../lib  -o main.o
+  # -c main.c =&gt; compile (-c) main.c (first file after :) = main.cpp
+  # -I ../lib =&gt; search headers (*.h) in directory ../lib
+  # -o main.o =&gt; output file (-o) is main.o (target) = main.o
+  gcc  main.o  -L../lib  -lhello  -o app
+  # main.o   =&gt; main.o (all files after the :) = main.o (here only one file)
+  # -L../lib =&gt; look for libraries in directory ../lib
+  # -lhello  =&gt; use shared library hello (libhello.so or hello.dll)
+  # -o app   =&gt; output file (-o) is app.exe (target) = &quot;app.exe&quot; or &quot;app&quot;
+  make: Leaving directory &#39;/tmp/app&#39;</code></pre>
+<p>运行</p>
+<p>应用程序需要知道共享库的位置。</p>
+<p>在Windows上，一个简单的解决方案是复制应用程序所在的库：</p>
+<pre><code>&gt; cp -v lib/hello.dll app
+`lib/hello.dll&#39; -&gt; `app/hello.dll&#39;</code></pre>
+<p>在类Unix操作系统上，您可以使用LD_LIBRARY_PATH环境变量：</p>
+<pre><code>&gt; export LD_LIBRARY_PATH=lib</code></pre>
+<p>在Windows上运行该命令：</p>
+<pre><code>&gt; app/app.exe
+hello</code></pre>
+<p>在类Unix操作系统上运行命令：</p>
+<pre><code>&gt; app/app
+hello</code></pre>
+<h3 id="next">next</h3>
+<h3 id="next-1">next</h3>
+<h2 id="用法技巧">用法技巧</h2>
+<h3 id="multiple-targets-in-a-rule-多目标写在一行">Multiple Targets in a Rule 多目标写在一行</h3>
+<p>相同依赖和生成方式的目标可以写在一起。 生成方式也不用一定一样的，可以用自动化变量加处理函数来处理。 详见说明文档。</p>
+<pre><code>bigoutput littleoutput : text.g
+  generate text.g -$(subst output,,$@) &gt; $@</code></pre>
+<p>is equivalent to:</p>
+<pre><code>bigoutput : text.g
+   generate text.g -big &gt; bigoutput
+littleoutput : text.g
+   generate text.g -little &gt; littleoutput</code></pre>
+</div><div class="tags"><a href="/tags/自动生成/">自动生成</a><a href="/tags/001-make/">001.make</a></div><div class="post-nav"><a class="pre" href="/2019/09/26/kl_notes/002memo/001software/index/">index</a><a class="next" href="/2019/09/26/kl_notes/002memo/001software/001install/sublime/">sublime</a></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/00-00misc/">00-00misc</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-00国学/">00-00国学</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-01古文/">00-01古文</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-02古训/">00-02古训</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-03小说/">00-03小说</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-04学术/">00-04学术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-05佛经/">00-05佛经</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-05南师/">00-05南师</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-06曾国藩/">00-06曾国藩</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-07金圣叹/">00-07金圣叹</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-08钱穆/">00-08钱穆</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-09历史/">00-09历史</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/00-10英文/">00-10英文</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/000misc/">000misc</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001-make/">001.make</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001-编程/">001.编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001-网站/">001.网站</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001install/">001install</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/001software/">001software</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/002memo/">002memo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/002plan/">002plan</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/002usage/">002usage</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/003post/">003post</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/004book/">004book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p00其它/">p00其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p01散文/">p01散文</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p02读书/">p02读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p03旅游/">p03旅游</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p04财经/">p04财经</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p05技术/">p05技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p06历史/">p06历史</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p07创投/">p07创投</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p08写作/">p08写作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/p09work/">p09work</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/welcome/">welcome</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/welcome/hello/">hello</a><span class="category-list-count">1</span></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/001software/" style="font-size: 15px;">001software</a> <a href="/tags/hello/" style="font-size: 15px;">hello</a> <a href="/tags/book/" style="font-size: 15px;">book+</a> <a href="/tags/002memo/" style="font-size: 15px;">002memo</a> <a href="/tags/post/" style="font-size: 15px;">post+</a> <a href="/tags/000misc/" style="font-size: 15px;">000misc</a> <a href="/tags/自动生成/" style="font-size: 15px;">自动生成</a> <a href="/tags/002plan/" style="font-size: 15px;">002plan</a> <a href="/tags/001install/" style="font-size: 15px;">001install</a> <a href="/tags/002usage/" style="font-size: 15px;">002usage</a> <a href="/tags/001-编程/" style="font-size: 15px;">001.编程</a> <a href="/tags/001-网站/" style="font-size: 15px;">001.网站</a> <a href="/tags/001-make/" style="font-size: 15px;">001.make</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-09历史/司马光-资治通鉴-23-01-周-原本/">司马光-资治通鉴-23-01-周-原本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-09历史/司马光-资治通鉴-23-20-后唐-原本/">司马光-资治通鉴-23-20-后唐-原本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-09历史/司马光-资治通鉴-23-08-晋2-原本/">司马光-资治通鉴-23-08-晋2-原本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-01古文/古文观止-白话注释译文-4-1/">古文观止-白话注释译文-4-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-00misc/叶开-这才是中国最好的语文书-散文分册/">叶开-这才是中国最好的语文书-散文分册</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-03小说/明朝那些事儿-7-1/">明朝那些事儿-7-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-07金圣叹/金圣叹-批评水浒传-4-1/">金圣叹-批评水浒传-4-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-03小说/明朝那些事儿-7-5/">明朝那些事儿-7-5</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-00misc/孙绍振-解读经典散文-3-2/">孙绍振-解读经典散文-3-2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/kl_book/004book/00-03小说/王实甫-西厢记-2-1-小说版/">王实甫-西厢记-2-1-小说版</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">⍟曾经走过👣.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
